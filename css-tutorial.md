@@ -403,9 +403,148 @@ background-size: cover;
 
 ### ผลการทดลอง
 ```html
-[วางโค้ดที่นี่]
+product.html
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>สินค้า</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../css/product.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- สินค้า 1 -->
+    <div class="product-card">
+        <img src="../images/p1.jpg" class="product-image">
+        <div class="product-info">
+            <h2 class="product-title">สินค้าตัวอย่าง 1</h2>
+            <p class="product-price">฿1,999</p>
+            <p class="product-description">รายละเอียดสินค้าน่าใช้งาน</p>
+            <a href="#" class="product-button">เพิ่มลงตะกร้า</a>
+        </div>
+    </div>
+
+    <!-- สินค้า 2 -->
+    <div class="product-card">
+        <img src="../images/p2.jpg" class="product-image">
+        <div class="product-info">
+            <h2 class="product-title">สินค้าตัวอย่าง 2</h2>
+            <p class="product-price">฿2,490</p>
+            <p class="product-description">คุณภาพดี คุ้มราคา</p>
+            <a href="#" class="product-button">เพิ่มลงตะกร้า</a>
+        </div>
+    </div>
+
+    <!-- สินค้า 3 -->
+    <div class="product-card">
+        <img src="../images/p3.jpg" class="product-image">
+        <div class="product-info">
+            <h2 class="product-title">สินค้าตัวอย่าง 3</h2>
+            <p class="product-price">฿3,290</p>
+            <p class="product-description">เหมาะสำหรับใช้งานทุกวัน</p>
+            <a href="#" class="product-button">เพิ่มลงตะกร้า</a>
+        </div>
+    </div>
+
+    <!-- สินค้า 4 -->
+    <div class="product-card">
+        <img src="../images/p4.jpg" class="product-image">
+        <div class="product-info">
+            <h2 class="product-title">สินค้าตัวอย่าง 4</h2>
+            <p class="product-price">฿990</p>
+            <p class="product-description">ราคาประหยัด น่าใช้</p>
+            <a href="#" class="product-button">เพิ่มลงตะกร้า</a>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
+product.css
+/* พื้นหลังหน้าเว็บ */
+body{
+    background-color: #f4f6f9;
+    font-family: Tahoma;
+}
+
+/* จัดการ์ดให้เรียง 4 อัน */
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 40px;
+}
+
+/* กล่องสินค้า */
+.product-card{
+    width: 260px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    background-color: white;
+    transition: 0.3s;
+}
+
+/* hover ลอยขึ้น */
+.product-card:hover{
+    transform: translateY(-5px);
+}
+
+/* รูปสินค้า */
+.product-image{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* ข้อมูลสินค้า */
+.product-info{
+    padding: 15px;
+}
+
+.product-title{
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.product-price{
+    color: #007bff;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.product-description{
+    color: #666;
+    font-size: 14px;
+}
+
+/* ปุ่ม */
+.product-button{
+    display: block;
+    background: linear-gradient(to right, #007bff, #004a99);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+.product-button:hover{
+    background: linear-gradient(to right, #004a99, #002f66);
+}
+
 ```
-[บันทึกภาพหน้าจอของผลลัพธ์การทดลอง]
+<img width="1918" height="866" alt="image" src="https://github.com/user-attachments/assets/0b3acf03-2f5a-4d8e-a5b1-12f0f28173c0" />
+
 
 [](#การทดลองที่-4-การจัดการขนาดและระยะห่าง)
 ## การทดลองที่ 4: การจัดการขนาดและระยะห่าง
