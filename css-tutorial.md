@@ -232,9 +232,74 @@ div > p {
 
 ### ผลการทดลอง
 ```html
-[วางโค้ดที่นี่]
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>เมนูเว็บไซต์</title>
+
+    <!-- เรียกใช้ External CSS -->
+    <link rel="stylesheet" href="/css/buttom.css">
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#" class="menu-item">หน้าแรก</a></li>
+            <li><a href="#" class="menu-item active">สินค้า</a></li>
+            <li><a href="#" class="menu-item">เกี่ยวกับเรา</a></li>
+            <li><a href="#" class="menu-item">ติดต่อ</a></li>
+        </ul>
+    </nav>
+
+</body>
+</html>
+CSS
+/* พื้นหลังแถบเมนู */
+nav{
+    background-color: #222;
+    padding: 15px;
+}
+
+/* เอาจุดหน้าลิสต์ออก + เรียงแนวนอน */
+nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+/* ระยะห่างเมนู */
+nav ul li{
+    margin: 0 10px;
+}
+
+/* ปุ่มเมนู */
+.menu-item{
+    color: white;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-family: Tahoma;
+}
+
+/* เอาเมาส์ชี้ */
+.menu-item:hover{
+    background-color: orange;
+}
+
+/* เมนูที่ถูกเลือก = สินค้า */
+.menu-item.active{
+    background-color: #007bff;
+}
+#active {
+    background-color: red;
+}
+
 ```
 [บันทึกภาพหน้าจอของผลลัพธ์การทดลอง]
+<img width="1919" height="873" alt="image" src="https://github.com/user-attachments/assets/c3427169-a5ab-47d3-8793-19fdedbf2680" />
 
 
 [](#การทดลองที่-3-การจัดการสีและพื้นหลัง)
