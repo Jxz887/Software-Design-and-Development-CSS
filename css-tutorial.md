@@ -1126,12 +1126,141 @@ blockquote {
 
 ### ผลการทดลอง
 ```html
-[วางโค้ด HTML ที่นี่]
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สินค้า</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="product-grid">
+
+    <!-- สินค้าชิ้นที่ 1 -->
+    <div class="product-card">
+        <img src="product1.jpg" class="product-image">
+
+        <div class="product-details">
+            <h3 class="product-title">Iphone 17 Promax</h3>
+            <div class="product-price">฿82,000</div>
+
+            <div class="product-action">
+                <button class="add-to-cart">เพิ่มลงตะกร้า</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- สินค้าชิ้นที่ 2 -->
+    <div class="product-card">
+        <img src="product2.jpg" class="product-image">
+
+        <div class="product-details">
+            <h3 class="product-title">Samsung Galaxy S25</h3>
+            <div class="product-price">฿14,990</div>
+
+            <div class="product-action">
+                <button class="add-to-cart">เพิ่มลงตะกร้า</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
 ```
 ```css
-[วางโค้ด CSS ที่นี่]
+/* พื้นหลัง */
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#f3f5f9;
+}
+
+/* grid */
+.product-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); /* เล็กลง */
+    gap:15px;
+    padding:15px;
+    max-width:900px;  /* ลดขนาดหน้ากว้าง */
+    margin:auto;
+}
+
+/* card */
+.product-card{
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 3px 10px rgba(0,0,0,0.1);
+    transition:0.25s;
+}
+
+.product-card:hover{
+    transform:translateY(-6px);
+}
+
+/* รูปสินค้า */
+.product-image{
+    width:100%;
+    height:150px;          /* ลดความสูงรูป */
+    object-fit:cover;      /* ไม่ยืดภาพ */
+}
+
+/* รายละเอียด */
+.product-details{
+    padding:12px;
+}
+
+.product-title{
+    font-size:1rem;        /* ตัวหนังสือเล็กลง */
+    margin-bottom:6px;
+    color:#222;
+}
+
+.product-price{
+    font-size:1.1rem;
+    color:#0d6efd;
+    font-weight:bold;
+}
+
+/* ปุ่ม */
+.product-action{
+    margin-top:10px;
+}
+
+.add-to-cart{
+    width:100%;
+    background:#0d6efd;
+    color:white;
+    border:none;
+    padding:7px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.add-to-cart:hover{
+    background:#084cdf;
+}
+
+/* มือถือ */
+@media(max-width:768px){
+    .product-grid{
+        grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
+    }
+
+    .product-image{
+        height:120px;
+    }
+}
 ```
 [บันทึกภาพหน้าจอของผลลัพธ์การทดลอง]
+<img width="1919" height="1015" alt="image" src="https://github.com/user-attachments/assets/042891f0-9cc0-4a04-b681-36b8f9b95081" />
 
 
 ### ตัวอย่างการใช้งาน: การสร้างเลย์เอาต์ Modern Dashboard
