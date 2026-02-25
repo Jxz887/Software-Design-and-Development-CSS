@@ -1408,10 +1408,296 @@ body{
 
 ### ผลการทดลอง
 ```html
-[วางโค้ด HTML ที่นี่]
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>แดชบอร์ด</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="dashboard">
+    <header class="header">
+      <h1 class="title">แดชบอร์ด</h1>
+
+      <nav class="top-nav">
+        <button class="btn btn-outline">โปรไฟล์</button>
+        <button class="btn btn-primary">ออกจากระบบ</button>
+      </nav>
+    </header>
+
+    <aside class="sidebar">
+      <div class="brand">MY DASH</div>
+
+      <nav class="side-nav">
+        <a class="menu-item active" href="#">หน้าแรก</a>
+        <a class="menu-item" href="#">รายงาน</a>
+        <a class="menu-item" href="#">การตั้งค่า</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h3>ยอดขายรวม</h3>
+          <p class="stat-value">฿150,000</p>
+          <p class="stat-sub">+12% จากเดือนที่แล้ว</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>จำนวนออเดอร์</h3>
+          <p class="stat-value">1,234</p>
+          <p class="stat-sub">เฉลี่ย 41 ออเดอร์/วัน</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>ลูกค้าใหม่</h3>
+          <p class="stat-value">45</p>
+          <p class="stat-sub">เพิ่มขึ้นต่อเนื่อง</p>
+        </div>
+      </div>
+
+      <div class="chart-container">
+        <div class="chart">
+          <h3>กราฟแสดงยอดขาย</h3>
+          <div class="chart-placeholder">พื้นที่สำหรับกราฟ</div>
+        </div>
+
+        <div class="chart">
+          <h3>สัดส่วนสินค้าขายดี</h3>
+          <div class="chart-placeholder">พื้นที่สำหรับกราฟ</div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
 ```
 ```css
-[วางโค้ด CSS ที่นี่]
+/* ===== Reset / Base ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Sarabun", Arial, sans-serif;
+  background: #f5f7fa;
+  color: #111827;
+}
+
+/* ===== Dashboard Grid ===== */
+.dashboard {
+  display: grid;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar main";
+  grid-template-columns: 260px 1fr;
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+}
+
+/* ===== Header ===== */
+.header {
+  grid-area: header;
+  background: #ffffff;
+  padding: 14px 18px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.35rem;
+  letter-spacing: -0.2px;
+}
+
+.top-nav {
+  display: flex;
+  gap: 10px;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: 0.2s;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background: #ffffff;
+  border: 1px solid #dbe3f0;
+  color: #111827;
+}
+
+.btn-outline:hover {
+  background: #f3f6ff;
+  transform: translateY(-1px);
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  grid-area: sidebar;
+  background: #0f172a;
+  color: #ffffff;
+  padding: 16px 14px;
+}
+
+.brand {
+  font-weight: 800;
+  letter-spacing: 2px;
+  font-size: 1.05rem;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.06);
+  margin-bottom: 14px;
+}
+
+.side-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.menu-item {
+  text-decoration: none;
+  color: rgba(255,255,255,0.85);
+  padding: 10px 12px;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+
+.menu-item:hover {
+  background: rgba(255,255,255,0.10);
+  color: #fff;
+}
+
+.menu-item.active {
+  background: rgba(37, 99, 235, 0.35);
+  color: #fff;
+}
+
+/* ===== Main ===== */
+.main-content {
+  grid-area: main;
+  padding: 18px;
+}
+
+/* ===== Stats Cards ===== */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.stat-card {
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid #e7eef8;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  transition: 0.2s;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+}
+
+.stat-card h3 {
+  margin: 0 0 6px;
+  font-size: 1rem;
+  color: #334155;
+}
+
+.stat-value {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #2563eb;
+}
+
+.stat-sub {
+  margin: 6px 0 0;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+/* ===== Charts ===== */
+.chart-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 14px;
+}
+
+.chart {
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid #e7eef8;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+.chart h3 {
+  margin: 0 0 10px;
+  color: #334155;
+  font-size: 1rem;
+}
+
+.chart-placeholder {
+  height: 220px;
+  border-radius: 12px;
+  background: repeating-linear-gradient(
+    45deg,
+    #f3f6fb,
+    #f3f6fb 10px,
+    #eef2ff 10px,
+    #eef2ff 20px
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-areas:
+      "header"
+      "main";
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .chart-container {
+    grid-template-columns: 1fr;
+  }
+}
 ```
 [บันทึกภาพหน้าจอของผลลัพธ์การทดลอง]
+<img width="1911" height="1002" alt="image" src="https://github.com/user-attachments/assets/406d3102-9349-4177-b253-4b4689224ed5" />
 
