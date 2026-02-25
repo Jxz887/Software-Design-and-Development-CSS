@@ -853,12 +853,138 @@ font-weight: bold;
 
 ### ผลการทดลอง
 ```html
-[วางโค้ด HTML ที่นี่]
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>บทความตัวอย่าง</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <article class="blog-post">
+    <header class="post-header">
+      <h1 class="post-title">วิธีการเขียนบทความที่น่าสนใจ</h1>
+      <div class="post-meta">โพสต์เมื่อ 1 มกราคม 2025 | โดย ผู้เขียน</div>
+    </header>
+
+    <div class="post-content">
+      <p>เนื้อหาบทความที่ดีควรมีความน่าสนใจและเป็นประโยชน์ต่อผู้อ่าน การเขียนบทความให้น่าอ่านนั้นมีหลักการสำคัญหลายประการ</p>
+
+      <h2>1. การเลือกหัวข้อที่น่าสนใจ</h2>
+      <p>หัวข้อที่ดีควรตรงกับความสนใจของกลุ่มเป้าหมาย และมีประโยชน์ต่อผู้อ่าน</p>
+
+      <blockquote>
+        "การเขียนที่ดีไม่ได้เกิดจากพรสวรรค์เพียงอย่างเดียว แต่เกิดจากการฝึกฝนอย่างสม่ำเสมอ"
+      </blockquote>
+
+      <h2>2. การจัดโครงสร้างเนื้อหา</h2>
+      <p>เนื้อหาที่ดีควรมีการจัดลำดับที่เป็นระบบ เข้าใจง่าย และมีความต่อเนื่อง</p>
+    </div>
+  </article>
+</body>
+</html>
 ```
 ```css
-[วางโค้ด CSS ที่นี่]
+/* ===== Base ===== */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Sarabun", Arial, sans-serif;
+  background: #f6f7fb;
+  color: #1f2937;
+}
+
+/* ===== Blog Layout ===== */
+.blog-post {
+  max-width: 820px;
+  margin: 2.5rem auto;
+  padding: 0 1rem;
+}
+
+/* กล่องบทความให้ดูเป็น Card */
+.blog-post {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 28px;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.06);
+}
+
+/* ===== Header ===== */
+.post-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.post-title {
+  font-size: 2.6rem;      /* ปรับขนาด title */
+  color: #111827;         /* เข้มขึ้น */
+  margin: 0 0 0.6rem;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.post-meta {
+  color: #6b7280;         /* เทาอ่านง่าย */
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ===== Content ===== */
+.post-content {
+  font-size: 1.1rem;      /* ปรับขนาดเนื้อหา */
+  line-height: 1.9;       /* อ่านสบายตา */
+  color: #374151;
+}
+
+.post-content p {
+  margin: 0 0 1.2rem;
+}
+
+.post-content h2 {
+  font-size: 1.7rem;      /* ปรับขนาดหัวข้อย่อย */
+  color: #111827;
+  margin: 2rem 0 1rem;
+}
+
+/* Quote */
+blockquote {
+  margin: 1.6rem 0;
+  padding: 1rem 1.2rem;
+  border-left: 5px solid #2563eb;
+  background: #eff6ff;
+  color: #1e3a8a;
+  font-style: italic;
+  border-radius: 10px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .blog-post {
+    padding: 18px;
+    margin: 1.2rem auto;
+  }
+
+  .post-title {
+    font-size: 2rem;
+  }
+
+  .post-content {
+    font-size: 1rem;
+  }
+
+  .post-content h2 {
+    font-size: 1.4rem;
+  }
+}
 ```
 [บันทึกภาพหน้าจอของผลลัพธ์การทดลอง]
+<img width="1919" height="1009" alt="image" src="https://github.com/user-attachments/assets/872f8767-662f-4f65-bd2d-9ac34da50d0e" />
 
 [](#การทดลองที่-6-Layout-และการจัดวางอิลิเมนต์)
 ## การทดลองที่ 6: Layout และการจัดวางอิลิเมนต์
