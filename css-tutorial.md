@@ -640,12 +640,107 @@ border: 1px solid black;
 
 ### ผลการทดลอง
 ```html
-[วางโค้ด HTML ที่นี่]
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stats Cards</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="stats-container">
+    <div class="stat-box">
+      <div class="stat-number">1,234</div>
+      <div class="stat-label">ผู้ใช้งาน</div>
+    </div>
+
+    <div class="stat-box">
+      <div class="stat-number">5.6K</div>
+      <div class="stat-label">ยอดขาย</div>
+    </div>
+
+    <div class="stat-box">
+      <div class="stat-number">98%</div>
+      <div class="stat-label">ความพึงพอใจ</div>
+    </div>
+  </div>
+</body>
+</html>
 ```
 ```css
-[วางโค้ด CSS ที่นี่]
+/* ===== Page Base ===== */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Sarabun", Arial, sans-serif;
+  background: #f3f6fb;
+  color: #222;
+}
+
+/* ===== Layout ===== */
+.stats-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  max-width: 1100px;
+  margin: 2.5rem auto;
+  padding: 0 1rem;
+}
+
+/* ===== Box Model ===== */
+.stat-box {
+  flex: 1;
+  padding: 28px;                 /* ปรับ padding ให้ชัด */
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 14px;           /* มุมโค้งขึ้น */
+  border: 1px solid #e8eef7;     /* เพิ่มเส้นขอบบาง ๆ */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08); /* เงานุ่มขึ้น */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== Typography ===== */
+.stat-number {
+  font-size: 2.8rem;       /* ปรับขนาดตัวเลข */
+  font-weight: 800;
+  color: #1d4ed8;          /* ปรับโทนสี */
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+
+.stat-label {
+  font-size: 0.95rem;      /* ปรับขนาด label */
+  color: #64748b;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .stats-container {
+    flex-direction: column;
+  }
+
+  .stat-box {
+    padding: 22px;
+  }
+
+  .stat-number {
+    font-size: 2.2rem;
+  }
+}
 ```
 [บันทึกภาพหน้าจอของผลลัพธ์การทดลอง]
+<img width="1916" height="1014" alt="image" src="https://github.com/user-attachments/assets/ce48e28d-e941-4b3c-bb79-cf4865ad1afa" />
 
 [](#การทดลองที่-5-การจัดการข้อความและฟอนต์)
 ## การทดลองที่ 5: การจัดการข้อความและฟอนต์
